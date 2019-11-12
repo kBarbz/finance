@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Stocks
+{% endblock %}
+
+{% block main %}
+    <h1>Stocks</h1>
+    <table class="table table-bordered">
+        <thead class="thead-light">
+    <tr>
+        <th scope="col">Stock</th>
+        <th scope="col">Shares</th>
+        <th scope="col">Price</th>
+        <th scope="col">Value</th>
+    </tr>
+        </thead>
+   <tbody>
+    {% for i in range(rows|length) %}
+    <tr>
+        {% for j in rows[i] %}
+        <td>{{ rows[i][j] }}</td>
+        {% endfor %}
+        <td> ${{ price[i] }}</td>
+        <td> {{ stock_value[i] }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    </br>
+    <p>
+        Cash balance: {{ cash }}
+    </p>
+    </br>
+    <p>
+        Total (stocks + cash): {{ value }}
+    </p>
+{% endblock %}

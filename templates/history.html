@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Stocks
+{% endblock %}
+
+{% block main %}
+    <h1>Stocks</h1>
+    <table class="table table-bordered">
+        <thead class="thead-light">
+    <tr>
+        <th scope="col">Stock</th>
+        <th scope="col">Shares</th>
+        <th scope="col">Price</th>
+        <th scope="col">Date</th>
+    </tr>
+        </thead>
+   <tbody>
+    {% for i in range(rows|length) %}
+    <tr>
+        {% for j in rows[i] %}
+        <td>{{ rows[i][j] }}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}
